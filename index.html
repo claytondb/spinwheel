@@ -286,10 +286,16 @@
             text-shadow: 0 0 20px rgba(78, 204, 163, 0.5);
         }
 
+        .modal-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
         .modal-content button {
-            padding: 12px 40px;
+            padding: 12px 30px;
             font-size: 1.1rem;
-            background: #e94560;
             color: white;
             border: none;
             border-radius: 10px;
@@ -299,6 +305,14 @@
 
         .modal-content button:hover {
             transform: scale(1.05);
+        }
+
+        .modal-content .spin-again-btn {
+            background: #e94560;
+        }
+
+        .modal-content .remove-winner-btn {
+            background: #6c5ce7;
         }
 
         /* Confetti */
@@ -355,7 +369,10 @@
         <div class="modal-content">
             <h2>🎉 The winner is...</h2>
             <div class="winner-name" id="winnerName"></div>
-            <button id="closeModal">Spin Again!</button>
+            <div class="modal-buttons">
+                <button class="spin-again-btn" id="closeModal">Spin Again</button>
+                <button class="remove-winner-btn" id="removeWinner">Remove & Spin</button>
+            </div>
         </div>
     </div>
 
@@ -371,10 +388,12 @@
         const winnerModal = document.getElementById('winnerModal');
         const winnerName = document.getElementById('winnerName');
         const closeModal = document.getElementById('closeModal');
+        const removeWinner = document.getElementById('removeWinner');
 
         let names = [];
         let isSpinning = false;
         let currentRotation = 0;
+        let lastWinnerIndex = -1;
 
         // Vibrant colors for the wheel
         const colors = [
@@ -518,9 +537,9 @@
             // The pointer is at the top (12 o'clock = -π/2 or 3π/2)
             // We need to find which segment is there
             const pointerAngle = (3 * Math.PI / 2 - normalizedRotation + 2 * Math.PI) % (2 * Math.PI);
-            const winnerIndex = Math.floor(pointerAngle / sliceAngle) % names.length;
+            lastWinnerIndex = Math.floor(pointerAngle / sliceAngle) % names.length;
             
-            showWinner(names[winnerIndex]);
+            showWinner(names[lastWinnerIndex]);
         }
 
         function showWinner(name) {
@@ -609,6 +628,13 @@
             drawWheel();
         });
         closeModal.addEventListener('click', () => {
+            winnerModal.classList.remove('show');
+        });
+        removeWinner.addEventListener('click', () => {
+            if (lastWinnerIndex >= 0 && lastWinnerIndex < names.length) {
+                removeName(lastWinnerIndex);
+                lastWinnerIndex = -1;
+            }
             winnerModal.classList.remove('show');
         });
         winnerModal.addEventListener('click', (e) => {
