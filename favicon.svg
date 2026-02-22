@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="seg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B6B"/>
+      <stop offset="100%" style="stop-color:#ee5a5a"/>
+    </linearGradient>
+    <linearGradient id="seg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4ECDC4"/>
+      <stop offset="100%" style="stop-color:#45b7aa"/>
+    </linearGradient>
+    <linearGradient id="seg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFE66D"/>
+      <stop offset="100%" style="stop-color:#ffd93d"/>
+    </linearGradient>
+    <linearGradient id="seg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6C5CE7"/>
+      <stop offset="100%" style="stop-color:#5f4ed6"/>
+    </linearGradient>
+    <linearGradient id="seg5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#A8E6CF"/>
+      <stop offset="100%" style="stop-color:#8fd9bc"/>
+    </linearGradient>
+    <linearGradient id="seg6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF8E53"/>
+      <stop offset="100%" style="stop-color:#f07a3c"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Wheel segments (6 equal pie slices) -->
+  <path d="M32 32 L32 4 A28 28 0 0 1 56.2 18 Z" fill="url(#seg1)"/>
+  <path d="M32 32 L56.2 18 A28 28 0 0 1 56.2 46 Z" fill="url(#seg2)"/>
+  <path d="M32 32 L56.2 46 A28 28 0 0 1 32 60 Z" fill="url(#seg3)"/>
+  <path d="M32 32 L32 60 A28 28 0 0 1 7.8 46 Z" fill="url(#seg4)"/>
+  <path d="M32 32 L7.8 46 A28 28 0 0 1 7.8 18 Z" fill="url(#seg5)"/>
+  <path d="M32 32 L7.8 18 A28 28 0 0 1 32 4 Z" fill="url(#seg6)"/>
+  
+  <!-- Center hub -->
+  <circle cx="32" cy="32" r="8" fill="#1a1a2e"/>
+  <circle cx="32" cy="32" r="5" fill="#fff"/>
+  
+  <!-- Pointer -->
+  <polygon points="32,2 28,10 36,10" fill="#1a1a2e"/>
+  
+  <!-- Decorative border -->
+  <circle cx="32" cy="32" r="28" fill="none" stroke="#fff" stroke-width="2" opacity="0.3"/>
+</svg>

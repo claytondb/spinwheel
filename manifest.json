@@ -1,0 +1,33 @@
+{
+  "name": "Spin the Wheel - Random Name Picker",
+  "short_name": "Spin Wheel",
+  "description": "A beautiful wheel spinner for picking random names. Perfect for games, classroom, and decisions.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#1a1a2e",
+  "theme_color": "#0f3460",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["utilities", "games", "entertainment"],
+  "screenshots": [
+    {
+      "src": "/screenshot.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "label": "Colorful spinning wheel"
+    }
+  ]
+}
